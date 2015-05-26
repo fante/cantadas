@@ -1,5 +1,6 @@
 package br.com.codigofante.cantadas.service;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -22,6 +23,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	PaqueraService paqueraService;
 	@Transactional
 	public void adicionaUsuario(Usuario usuario){
+		usuario.setDataNascimento(Calendar.getInstance());
 		manager.persist(usuario);
 		
 	}
